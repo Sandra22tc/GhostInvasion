@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D Rb;
     public RayCastJump checkGround;
 
+
     //collider del buho
     BoxCollider2D OwlCollider;
     float owl_ScaleX, owl_ScaleY, owl_ScaleZ;
@@ -64,10 +65,13 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("InFloor", true);
             }
             if (Input.GetKeyUp(KeyCode.Space))
-            {
+            {  
+           
 
                 anim.SetBool("InFloor", false);
+
             }
+
 
             //convertirse en buho
             if (Input.GetKey(KeyCode.O))
@@ -114,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //sandia
+    //coin
     private void OnTriggerEnter2D(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))

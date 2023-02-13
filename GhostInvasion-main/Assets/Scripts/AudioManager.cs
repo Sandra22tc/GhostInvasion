@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     static public AudioManager instance;
     private List<GameObject> activeAudioGameObjects;
 
+
     void Awake()
     {
         if (instance)
@@ -21,6 +22,8 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+
 
 
     //volumen: [0, 1]
@@ -72,5 +75,4 @@ public class AudioManager : MonoBehaviour
         }
     }
 }
-
 
