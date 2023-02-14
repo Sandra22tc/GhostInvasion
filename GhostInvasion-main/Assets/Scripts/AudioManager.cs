@@ -7,8 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     static public AudioManager instance;
     private List<GameObject> activeAudioGameObjects;
-
-
+    private AudioManager audioManager;
+    public AudioClip jumpSound;
     void Awake()
     {
         if (instance)
@@ -73,6 +73,17 @@ public class AudioManager : MonoBehaviour
             activeAudioGameObjects.Remove(source.gameObject);
             Destroy(source.gameObject);
         }
+    }
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void Jump()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+            audioManager.GetComponent<AudioSource>().clip = audioManager.jumpSound;
+        audioManager.GetComponent<AudioSource>().Play();
     }
 }
 

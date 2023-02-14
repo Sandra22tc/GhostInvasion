@@ -1,16 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
 
-    public int coinValue = 1;
-    private void OnTriggerEnter2D(Collider2D other)
+    public int score = 0;
+    
+    public TMPro.TMP_Text scoreText; //llama al text mesh pro
+
+
+    private void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
+        score = 0;
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "coin")
         {
-            Destroy(this.gameObject);
+            score++;
+            scoreText.text = "Score: " + score;
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            score++;
+            scoreText.text = "Score: " + score;
         }
     }
 

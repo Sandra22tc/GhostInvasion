@@ -17,7 +17,7 @@ public class InitialMenu : MonoBehaviour
     }
     public void Return() //boton para volver al menu
     {
-        Application.Quit();
+       SceneManager.LoadScene("InitialMenu");
     }
    
 }

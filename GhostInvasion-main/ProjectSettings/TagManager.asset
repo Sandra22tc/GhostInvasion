@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - DeathZone
   - Coin
+  - coin
   layers:
   - Default
   - TransparentFX

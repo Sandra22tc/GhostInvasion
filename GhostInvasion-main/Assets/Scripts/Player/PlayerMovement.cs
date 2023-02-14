@@ -66,11 +66,10 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Space))
             {  
-           
-
+       
                 anim.SetBool("InFloor", false);
-
-            }
+           
+        }
 
 
             //convertirse en buho
@@ -121,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     //coin
     private void OnTriggerEnter2D(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("coin"))
         {
             Destroy(other.gameObject);
         }
